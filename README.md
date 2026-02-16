@@ -26,7 +26,7 @@ Once trained, the Bayesian model can generalize across species and is applied he
 ```
 .
 ├── notebooks/
-│   ├── Train_on_human.ipynb
+│   ├── Train_on_human_DEMO.ipynb
 │   ├── Test_on_ecoli_DEMO.ipynb
 │
 ├── src/
@@ -51,54 +51,44 @@ git clone https://github.com/haiqingzhao/BayesianModel-for-Ecoli-PPI.git
 cd BayesianModel-for-Ecoli-PPI
 ```
 
-### 2. Install dependencies
+### 2. Create Environment and Install Dependencies
+Requires Python 3.9 or later.
 
 ```bash
+conda create -n bayes python=3.9
+conda activate bayes
 pip install -r requirements.txt
 ```
 
 ### 3. Prepare the Training and Testing Data
 
-Training the Bayesian model requires **three feature tables** and **two label datasets** for human PPIs. Testing the Bayesian model requires **three feature tables** for *E. coli* PPIs. Related methods have been previously published, here due to the large sizes of these genome-wide predictions, the direct PPI files will be available upon requests.
+Training the Bayesian model requires **three feature tables** and **two label datasets** for human PPIs. Testing the Bayesian model requires **three feature tables** for *E. coli* PPIs. Details of these files are described in the below.
 
 #### 3.1 Training Data (Human)
 
 ##### 3.1.1 Feature Tables (Human)
 
-Prepare human PPI predictions separately from PrePPI, ZEPPI, and D-Script (TT). Each file must contain:
-
-```
-UniprotID_pair, score
-```
+Generate human PPI interactome predictions separately using PrePPI, ZEPPI, and D-Script (TT), and save the results in CSV format. Each output file should contain two columns: `UniprotID_pair` and `score`. The `UniprotID_pair` column should list the predicted protein pairs in the format `UniProtID1_UniProtID2` (two UniProt IDs separated by an underscore). The score column should contain the corresponding prediction score. For convenience, we uploaded the three genome-wide predictions that we used in this work in Figshare (https://dx.doi.org/10.6084/m9.figshare.30822977).
 
 ##### 3.1.2 Training Labels (Human TP/TN)
 
-Prepare TP and TN datasets. File format:
-
-```
-UniprotID_pair, label
-```
-
-Where `label = 1` (TP) or `label = 0` (TN).
+Prepare TP and TN datasets in CSV format. Each dataset consists of two columns of data: `UniprotID_pair` and `label`, where `label = 1` (TP) or `label = 0` (TN). The TP dataset can be downloaded from [HINT website](https://hint.yulab.org/download) (Literature curated binary), or [STRING website](https://string-db.org/cgi/download) (physical subnetwork). The TN dataset was curated in-house by extracting experimentally validated PPIs from all possible pairwise protein combinations. For convenience, we uploaded the experimental PPI datasets that we used in this work in Figshare (https://dx.doi.org/10.6084/m9.figshare.30822977).
 
 #### 3.2 Testing Data (*E. coli*)
 
-##### 3.1.1 Feature Tables (*E. coli*)
+##### 3.2.1 Feature Tables (*E. coli*)
 
-Prepare *E. coli* PPI predictions from PrePPI, ZEPPI, and D-Script (TT). Each file must contain:
-```
-UniprotID_pair, score
-```
+Generate *E. coli* PPI interactome predictions from PrePPI, ZEPPI, and D-Script (TT) and save the results in csv format. Each output file should contain two columns: `UniprotID_pair` and `score`. The `UniprotID_pair` column should list the predicted protein pairs in the format `UniProtID1_UniProtID2` (two UniProt IDs separated by an underscore). The score column should contain the corresponding prediction score. As a reference, we uploaded the three genome-wide predictions of *E. coli* that we used in this work in Figshare (https://dx.doi.org/10.6084/m9.figshare.30822977).
 
 ### 4. Run training
 
 Open the training notebook:
 
 ```
-Train_on_human.ipynb
+Train_on_human_DEMO.ipynb
 ```
 
-It will need ~35GB memory to run it. The trained models of ZEPPI-LR and TT-LR on human — used in the paper — are provided as references. 
+It will need ~35GB memory to run it. The trained models of ZEPPI-LR and TT-LR on human — used in the paper — are provided as references (under `/data` folder). 
 
 ### 5. Run prediction for *E. coli*
 
@@ -107,10 +97,12 @@ Open:
 ```
 Test_on_ecoli_DEMO.ipynb
 ```
+The final integrated prediction file will be generated and stored at assigned path. As a reference, we uploaded the final prediction of *E. coli* PPI with three separate and one integrated clue in Figshare (https://dx.doi.org/10.6084/m9.figshare.30822977).
+
 
 ## Contact
 
 For questions, please reach out to:
 
-**Haiqing Zhao hz2592@cumc.columbia.edu**  
+**Haiqing Zhao hz2592@cumc.columbia.edu; hazhao@UTMB.EDU**  
 
