@@ -1,4 +1,4 @@
-# Bayesian Integration of PPI Scores (PrePPI-SM + ZEPPI + D-Script-TT)
+# Bayesian Integration of PPI Modeling (PrePPI-SM + ZEPPI + D-Script-TT)
 
 This repository contains a naïve Bayesian model for integrating multiple protein–protein interaction (PPI) scores—**PrePPI-SM**, **ZEPPI**, and **D-Script-TT**—into a single combined score. The model was trained on **human PPIs** and used to generate predictions for *E. coli* protein–protein interactions.
 
