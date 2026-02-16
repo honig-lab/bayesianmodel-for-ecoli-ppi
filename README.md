@@ -36,6 +36,7 @@ Once trained, the Bayesian model can generalize across species and is applied he
 ├── data/
 │   ├── human_ZP_Bayes_ratio1000.pkl
 │   ├── human_DS_Bayes_STRING.pkl
+│   ├── ecoli_ROC_data.xlsx
 │
 └── README.md
 └── requirements.txt
@@ -97,7 +98,7 @@ Open:
 ```
 Test_on_ecoli_DEMO.ipynb
 ```
-The final integrated prediction file will be generated and stored at assigned path. As a reference, we uploaded the final prediction of *E. coli* PPI with three separate and one integrated clue in Figshare (https://dx.doi.org/10.6084/m9.figshare.30822977).
+The final integrated prediction file will be generated and stored at assigned path. As a reference, we uploaded the final prediction of *E. coli* PPI with three separate and one integrated clue in Figshare (https://dx.doi.org/10.6084/m9.figshare.30822977). To benchmark our performance, the FPR and TPR that are used to calculate ROC curves (Figure S1) are uploaded as `/data/ecoli_ROC_data.xlsx`. 
 
 
 ## Contact
