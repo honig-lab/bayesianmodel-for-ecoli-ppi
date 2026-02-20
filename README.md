@@ -69,17 +69,17 @@ Training the Bayesian model requires **three feature tables** and **two label da
 
 ##### 3.1.1 Feature Tables (Human)
 
-Generate human PPI interactome predictions separately using PrePPI, ZEPPI, and D-Script (TT), and save the results in CSV format. Each output file should contain two columns: `UniprotID_pair` and `score`. The `UniprotID_pair` column should list the predicted protein pairs in the format `UniProtID1_UniProtID2` (two UniProt IDs separated by an underscore). The score column should contain the corresponding prediction score. For convenience, we uploaded the three genome-wide predictions that we used in this work in Figshare (https://dx.doi.org/10.6084/m9.figshare.30822977).
+Generate human PPI interactome predictions separately using PrePPI, ZEPPI, and D-Script (TT), and save the results in CSV format. Each output file should contain two columns: `UniprotID_pair` and `score`. The `UniprotID_pair` column should list the predicted protein pairs in the format `UniProtID1_UniProtID2` (two UniProt IDs separated by an underscore). The score column should contain the corresponding prediction score. For convenience, we uploaded the three genome-wide predictions that we used in this work on [Figshare](https://doi.org/10.6084/m9.figshare.31362145) platform.
 
 ##### 3.1.2 Training Labels (Human TP/TN)
 
-Prepare TP and TN datasets in CSV format. Each dataset consists of two columns of data: `UniprotID_pair` and `label`, where `label = 1` (TP) or `label = 0` (TN). The TP dataset can be downloaded from [HINT website](https://hint.yulab.org/download) (Literature curated binary), or [STRING website](https://string-db.org/cgi/download) (physical subnetwork). The TN dataset was curated in-house by extracting experimentally validated PPIs from all possible pairwise protein combinations. For convenience, we uploaded the experimental PPI datasets that we used in this work in Figshare (https://dx.doi.org/10.6084/m9.figshare.30822977).
+Prepare TP and TN datasets in CSV format. Each dataset consists of two columns of data: `UniprotID_pair` and `label`, where `label = 1` (TP) or `label = 0` (TN). The TP dataset can be downloaded from [HINT website](https://hint.yulab.org/download) (Literature curated binary), or [STRING website](https://string-db.org/cgi/download) (physical subnetwork). The TN dataset was curated in-house by extracting experimentally validated PPIs from all possible pairwise protein combinations. For convenience, we uploaded the experimental PPI datasets that we used in this work on [Figshare](https://doi.org/10.6084/m9.figshare.31362145) platform.
 
 #### 3.2 Testing Data (*E. coli*)
 
 ##### 3.2.1 Feature Tables (*E. coli*)
 
-Generate *E. coli* PPI interactome predictions from PrePPI, ZEPPI, and D-Script (TT) and save the results in csv format. Each output file should contain two columns: `UniprotID_pair` and `score`. The `UniprotID_pair` column should list the predicted protein pairs in the format `UniProtID1_UniProtID2` (two UniProt IDs separated by an underscore). The score column should contain the corresponding prediction score. As a reference, we uploaded the three genome-wide predictions of *E. coli* that we used in this work in Figshare (https://dx.doi.org/10.6084/m9.figshare.30822977).
+Generate *E. coli* PPI interactome predictions from PrePPI, ZEPPI, and D-Script (TT) and save the results in csv format. Each output file should contain two columns: `UniprotID_pair` and `score`. The `UniprotID_pair` column should list the predicted protein pairs in the format `UniProtID1_UniProtID2` (two UniProt IDs separated by an underscore). The score column should contain the corresponding prediction score. As a reference, we uploaded the three genome-wide predictions of *E. coli* that we used in this work on [Figshare](https://doi.org/10.6084/m9.figshare.31362145) platform.
 
 ### 4. Run training
 
@@ -98,7 +98,7 @@ Open:
 ```
 Test_on_ecoli_DEMO.ipynb
 ```
-The final integrated prediction file will be generated and stored at assigned path. As a reference, we uploaded the final prediction of *E. coli* PPI with three separate and one integrated clue in Figshare (https://dx.doi.org/10.6084/m9.figshare.30822977). To benchmark our performance, the FPR and TPR that are used to calculate ROC curves (Figure S1) are uploaded as `/data/ecoli_ROC_data.xlsx`. 
+The final integrated prediction file will be generated and stored at assigned path. As a reference, we uploaded the final prediction of *E. coli* PPI with three separate and one integrated clue on [Figshare](https://doi.org/10.6084/m9.figshare.31362145) platform. To benchmark our performance, the FPR and TPR that are used to calculate ROC curves (Figure S1) are uploaded as `/data/ecoli_ROC_data.xlsx`. 
 
 ## Citation
 
